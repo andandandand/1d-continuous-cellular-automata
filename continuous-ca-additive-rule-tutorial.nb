@@ -10,36 +10,39 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16979,        408]
-NotebookOptionsPosition[     16214,        379]
-NotebookOutlinePosition[     16590,        395]
-CellTagsIndexPosition[     16547,        392]
+NotebookDataLength[     17262,        410]
+NotebookOptionsPosition[     16497,        381]
+NotebookOutlinePosition[     16873,        397]
+CellTagsIndexPosition[     16830,        394]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["\<\
-Continuous 1D Cellular Automaton 
-- Additive Rule Tutorial\
-\>", "Title",
+Cell["Continuous 1D Cellular Automaton Tutorial", "Title",
  CellChangeTimes->{{3.618016922495137*^9, 3.6180169423582735`*^9}, {
    3.618056687631836*^9, 3.618056691614258*^9}, 3.618058135334961*^9, {
-   3.618058238163086*^9, 3.6180582389375*^9}, 3.618060026364258*^9}],
+   3.618058238163086*^9, 3.6180582389375*^9}, 3.618060026364258*^9, {
+   3.618060423411133*^9, 3.618060541713867*^9}, 3.6180606528203125`*^9, {
+   3.6180614515214844`*^9, 3.6180614522177734`*^9}}],
 
 Cell["", "Text"],
 
 Cell[TextData[{
- "In a continuous cellular automaton, each cell has a gray level in [0,1] as \
-its state. \n\nThe state of tne new cell ",
- StyleBox["s",
+ "\tIn a continuous cellular automaton, each cell has a gray level between \
+[0,1] as its state. \n\tIn the cellular automaton shown, the transition \
+function f computes the state of the cell ",
+ StyleBox["s,",
   FontSlant->"Italic"],
- " at the step ",
- StyleBox["t+1",
+ " at evolution step ",
+ StyleBox["t+1,",
   FontSlant->"Italic"],
- " is the fractional part of the mean of its neighborhood\[CloseCurlyQuote]s \
-gray levels plust a constant ",
+ " as the fractional part of the mean of its neighborhood\[CloseCurlyQuote]s \
+gray levels at evolution step ",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ " plus a constant ",
  StyleBox["k",
   FontSlant->"Italic"],
  "."
@@ -54,15 +57,14 @@ gray levels plust a constant ",
    3.618055938616211*^9, {3.6180581166064453`*^9, 3.618058119178711*^9}, {
    3.618058271395508*^9, 3.6180582715634766`*^9}, {3.618058304493164*^9, 
    3.6180583065322266`*^9}, {3.618058377526367*^9, 3.61805838146875*^9}, {
-   3.6180600357226562`*^9, 3.6180600493271484`*^9}}],
+   3.6180600357226562`*^9, 3.6180600493271484`*^9}, {3.6180611325478516`*^9, 
+   3.618061287859375*^9}, {3.6180613933896484`*^9, 3.618061437205078*^9}}],
 
 Cell[BoxData[
  StyleBox[
   RowBox[{
    StyleBox[
-    RowBox[{
-     StyleBox[
-      RowBox[{"(", "*"}]], "  ", 
+    RowBox[{"(*", "  ", 
      RowBox[{"p", ",", "q", ",", 
       RowBox[{
        RowBox[{
@@ -84,27 +86,26 @@ Cell[BoxData[
           RowBox[{"right", " ", 
            RowBox[{"neighbor", "'"}], "s", " ", "gray", " ", "level", "\n", 
            "\t", "k"}], " ", "=", " ", 
-          RowBox[{"added", " ", "constant", "\n", "\n", 
-           StyleBox[
-            RowBox[{" ", " "}]], 
-           StyleBox[
-            RowBox[{" ", " "}]], "the", " ", "code", " ", "below", " ", "is", 
-           " ", "a", " ", "succint", " ", "description", " ", "of", " ", 
-           "the", " ", "rule"}]}]}]}]}], ",", " ", 
-      RowBox[{"but", " ", 
+          RowBox[{
+          "added", " ", "constant", "\n", "\n", "  ", "  ", "the", " ", 
+           "code", " ", "below", " ", "is", " ", "a", " ", "succint", " ", 
+           "description", " ", "of", " ", "the", " ", "rule"}]}]}]}]}], ",", 
+      " ", 
+      RowBox[{
        RowBox[{"it", "'"}], "s", " ", "not", " ", "used", " ", "in", " ", 
        "the", " ", "Manipulate", " ", "demo", " ", "below"}]}], " ", "\n", 
-     StyleBox[
-      RowBox[{"*", ")"}]]}],
+     "*)"}],
     FontFamily->"Courier New"], 
    StyleBox["\n",
     FontFamily->"Courier New"], 
    RowBox[{
     StyleBox[
-     RowBox[{"s", " ", "=", " ", 
+     RowBox[{"f", " ", ":=", " ", 
       RowBox[{"FractionalPart", "[", 
        RowBox[{"Mean", "[", 
-        RowBox[{"p", "+", "q", "+", "r", "+", "k"}], "]"}], "]"}], " "}],
+        RowBox[{"p", "+", "q", "+", "r", "+", "k"}], "]"}], "]"}]}],
+     FontFamily->"Courier New"], 
+    StyleBox[" ",
      FontFamily->"Courier New"], 
     StyleBox["\n",
      FontFamily->"Arial"]}]}],
@@ -119,7 +120,8 @@ Cell[BoxData[
   3.618055938616211*^9, 3.618056037198242*^9}, {3.6180562961777344`*^9, 
   3.618056427743164*^9}, {3.618056833852539*^9, 3.6180568671728516`*^9}, {
   3.6180582803583984`*^9, 3.6180582887070312`*^9}, {3.6180584144716797`*^9, 
-  3.618058494767578*^9}, {3.618058536064453*^9, 3.618058537248047*^9}}],
+  3.618058494767578*^9}, {3.618058536064453*^9, 3.618058537248047*^9}, {
+  3.618061352873047*^9, 3.618061381138672*^9}}],
 
 Cell[TextData[{
  "\nThis rule is described on ",
@@ -395,20 +397,20 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 293, 6, 330, "Title"],
-Cell[876, 30, 16, 0, 60, "Text"],
-Cell[895, 32, 1202, 24, 136, "Text"],
-Cell[2100, 58, 2856, 63, 474, "Code"],
-Cell[4959, 123, 843, 15, 98, "Text"],
+Cell[580, 22, 396, 5, 201, "Title"],
+Cell[979, 29, 16, 0, 60, "Text"],
+Cell[998, 31, 1445, 29, 136, "Text"],
+Cell[2446, 62, 2793, 61, 474, "Code"],
+Cell[5242, 125, 843, 15, 98, "Text"],
 Cell[CellGroupData[{
-Cell[5827, 142, 5504, 132, 474, "Code"],
-Cell[11334, 276, 3596, 65, 1836, "Output"]
+Cell[6110, 144, 5504, 132, 474, "Code"],
+Cell[11617, 278, 3596, 65, 1811, "Output"]
 }, Open  ]],
-Cell[14945, 344, 134, 1, 80, "Text"],
-Cell[15082, 347, 292, 7, 136, "Text"],
-Cell[15377, 356, 96, 1, 60, "Input"],
-Cell[15476, 359, 256, 3, 144, "Text"],
-Cell[15735, 364, 463, 12, 60, "Text"]
+Cell[15228, 346, 134, 1, 80, "Text"],
+Cell[15365, 349, 292, 7, 136, "Text"],
+Cell[15660, 358, 96, 1, 60, "Input"],
+Cell[15759, 361, 256, 3, 144, "Text"],
+Cell[16018, 366, 463, 12, 60, "Text"]
 }, Open  ]]
 }
 ]
