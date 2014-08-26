@@ -1,0 +1,417 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16979,        408]
+NotebookOptionsPosition[     16214,        379]
+NotebookOutlinePosition[     16590,        395]
+CellTagsIndexPosition[     16547,        392]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Continuous 1D Cellular Automaton 
+- Additive Rule Tutorial\
+\>", "Title",
+ CellChangeTimes->{{3.618016922495137*^9, 3.6180169423582735`*^9}, {
+   3.618056687631836*^9, 3.618056691614258*^9}, 3.618058135334961*^9, {
+   3.618058238163086*^9, 3.6180582389375*^9}, 3.618060026364258*^9}],
+
+Cell["", "Text"],
+
+Cell[TextData[{
+ "In a continuous cellular automaton, each cell has a gray level in [0,1] as \
+its state. \n\nThe state of tne new cell ",
+ StyleBox["s",
+  FontSlant->"Italic"],
+ " at the step ",
+ StyleBox["t+1",
+  FontSlant->"Italic"],
+ " is the fractional part of the mean of its neighborhood\[CloseCurlyQuote]s \
+gray levels plust a constant ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.618016990591032*^9, 3.6180170585909214`*^9}, {
+   3.618017382113426*^9, 3.618017383745519*^9}, {3.618017772644763*^9, 
+   3.618017860395782*^9}, {3.6180188582928586`*^9, 3.6180189105098453`*^9}, {
+   3.618018957742547*^9, 3.6180189731804295`*^9}, {3.618019038426162*^9, 
+   3.6180190384271617`*^9}, {3.618054882649414*^9, 3.618054994401367*^9}, {
+   3.6180550556210938`*^9, 3.618055142395508*^9}, {3.618055626008789*^9, 
+   3.6180556283203125`*^9}, {3.6180556667441406`*^9, 3.6180557559101562`*^9}, 
+   3.618055938616211*^9, {3.6180581166064453`*^9, 3.618058119178711*^9}, {
+   3.618058271395508*^9, 3.6180582715634766`*^9}, {3.618058304493164*^9, 
+   3.6180583065322266`*^9}, {3.618058377526367*^9, 3.61805838146875*^9}, {
+   3.6180600357226562`*^9, 3.6180600493271484`*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     StyleBox[
+      RowBox[{"(", "*"}]], "  ", 
+     RowBox[{"p", ",", "q", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"r", " ", "describe", " ", "the", " ", 
+         RowBox[{"cell", "'"}], "s", " ", "neighborhood", " ", "at", " ", 
+         "step", " ", "t", "\n", "\t", "s", " ", "is", " ", "the", " ", "new",
+          " ", "state", " ", "of", " ", "the", " ", "cell", " ", "at", " ", 
+         "step", " ", "t"}], "+", 
+        RowBox[{"1", "     ", "\n", "\n", "\t", "q"}]}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{"currently", " ", "evaluated", " ", 
+         RowBox[{"cell", "'"}], "s", " ", "gray", " ", "level", "\n", "\t", 
+         "p"}], " ", "=", " ", 
+        RowBox[{
+         RowBox[{"left", " ", 
+          RowBox[{"neightbor", "'"}], "s", " ", "gray", " ", "level", "\n", 
+          "\t", "r"}], " ", "=", " ", 
+         RowBox[{
+          RowBox[{"right", " ", 
+           RowBox[{"neighbor", "'"}], "s", " ", "gray", " ", "level", "\n", 
+           "\t", "k"}], " ", "=", " ", 
+          RowBox[{"added", " ", "constant", "\n", "\n", 
+           StyleBox[
+            RowBox[{" ", " "}]], 
+           StyleBox[
+            RowBox[{" ", " "}]], "the", " ", "code", " ", "below", " ", "is", 
+           " ", "a", " ", "succint", " ", "description", " ", "of", " ", 
+           "the", " ", "rule"}]}]}]}]}], ",", " ", 
+      RowBox[{"but", " ", 
+       RowBox[{"it", "'"}], "s", " ", "not", " ", "used", " ", "in", " ", 
+       "the", " ", "Manipulate", " ", "demo", " ", "below"}]}], " ", "\n", 
+     StyleBox[
+      RowBox[{"*", ")"}]]}],
+    FontFamily->"Courier New"], 
+   StyleBox["\n",
+    FontFamily->"Courier New"], 
+   RowBox[{
+    StyleBox[
+     RowBox[{"s", " ", "=", " ", 
+      RowBox[{"FractionalPart", "[", 
+       RowBox[{"Mean", "[", 
+        RowBox[{"p", "+", "q", "+", "r", "+", "k"}], "]"}], "]"}], " "}],
+     FontFamily->"Courier New"], 
+    StyleBox["\n",
+     FontFamily->"Arial"]}]}],
+  FontWeight->"Plain"]], "Code",
+ CellChangeTimes->{{3.618016990591032*^9, 3.6180170585909214`*^9}, {
+  3.618017382113426*^9, 3.618017383745519*^9}, {3.618017772644763*^9, 
+  3.618017860395782*^9}, {3.6180188582928586`*^9, 3.6180189105098453`*^9}, {
+  3.618018957742547*^9, 3.6180189731804295`*^9}, {3.618019038426162*^9, 
+  3.6180190384271617`*^9}, {3.618054882649414*^9, 3.618054994401367*^9}, {
+  3.6180550556210938`*^9, 3.618055142395508*^9}, {3.618055626008789*^9, 
+  3.6180556283203125`*^9}, {3.6180556667441406`*^9, 3.6180557559101562`*^9}, {
+  3.618055938616211*^9, 3.618056037198242*^9}, {3.6180562961777344`*^9, 
+  3.618056427743164*^9}, {3.618056833852539*^9, 3.6180568671728516`*^9}, {
+  3.6180582803583984`*^9, 3.6180582887070312`*^9}, {3.6180584144716797`*^9, 
+  3.618058494767578*^9}, {3.618058536064453*^9, 3.618058537248047*^9}}],
+
+Cell[TextData[{
+ "\nThis rule is described on ",
+ ButtonBox["page 159 of Wolfram's NKS",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolframscience.com/nksonline/page-158"], None},
+  ButtonNote->"http://www.wolframscience.com/nksonline/page-158"]
+}], "Text",
+ CellChangeTimes->{{3.618016990591032*^9, 3.6180170585909214`*^9}, {
+  3.618017382113426*^9, 3.618017383745519*^9}, {3.618017772644763*^9, 
+  3.618017860395782*^9}, {3.6180188582928586`*^9, 3.6180189105098453`*^9}, {
+  3.618018957742547*^9, 3.6180189731804295`*^9}, {3.618019038426162*^9, 
+  3.6180190384271617`*^9}, {3.618054882649414*^9, 3.618054994401367*^9}, {
+  3.6180550556210938`*^9, 3.618055142395508*^9}, {3.618055626008789*^9, 
+  3.6180556283203125`*^9}, {3.6180556667441406`*^9, 3.6180557559101562`*^9}, {
+  3.618055938616211*^9, 3.6180559467265625`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{"view", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"view", "===", "ArrayPlot"}], ",", "#", ",", 
+          RowBox[{"Reverse", "[", "#", "]"}]}], "]"}], "&"}], "[", 
+       RowBox[{"CellularAutomaton", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Mean", "[", "#", "]"}], "+", "k"}], ",", "1"}], "]"}],
+             "&"}], ",", 
+           RowBox[{"{", "}"}], ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+         "\t", 
+         RowBox[{"N", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"value", "[", "x", "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", 
+              RowBox[{"-", 
+               RowBox[{"Floor", "[", 
+                RowBox[{"steps", "/", "2"}], "]"}]}], ",", 
+              RowBox[{"Floor", "[", 
+               RowBox[{"steps", "/", "2"}], "]"}], ",", "1"}], "}"}]}], "]"}],
+           "]"}], ",", "steps"}], "]"}], "]"}], ",", "\[IndentingNewLine]", 
+      "\t", 
+      RowBox[{"Frame", "\[Rule]", " ", "None"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{"700", ",", "700"}], "}"}]}], ",", 
+      RowBox[{"ColorFunction", "\[Rule]", " ", "\"\<GrayTones\>\""}]}], "]"}],
+     ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"steps", ",", "500"}], "}"}], ",", "10", ",", "500", ",", 
+      "1"}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "k", ",", "0.0081", ",", "\"\<k added to mean of neighborhood\>\""}], 
+       "}"}], ",", "0", ",", "1", ",", ".0001", ",", 
+      RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",",
+     "\[IndentingNewLine]", "\t", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"view", ",", "ArrayPlot"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"ArrayPlot", "\[Rule]", " ", "\"\<cell gray level\>\""}], ",", 
+        RowBox[{"ListContourPlot", "\[Rule]", " ", "\"\<contour\>\""}], ",", 
+        RowBox[{"ListDensityPlot", "\[Rule]", " ", "\"\<density\>\""}]}], 
+       "}"}]}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"value", ",", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"#", "\[Equal]", "0"}], ",", "1", ",", "0"}], "]"}], "&"}],
+         ",", "\"\<initial condition\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"#", "\[Equal]", "0"}], ",", "1", ",", "0"}], "]"}], 
+          "&"}], "\[Rule]", " ", "\"\<one cell\>\""}], ",", "\n", 
+        StyleBox[
+         RowBox[{"\t\t\t\t\t\t\t\t\t\t\t", "\t"}]], 
+        RowBox[{
+         RowBox[{
+          RowBox[{".1", "+", 
+           RowBox[{
+            RowBox[{"Sinc", "[", "#", "]"}], "/", "2"}]}], "&"}], "\[Rule]", 
+         " ", "\"\<Sinc\>\""}], ",", "\n", 
+        StyleBox[
+         RowBox[{"\t\t\t\t\t\t\t\t\t\t\t", "\t"}]], 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "+", 
+             RowBox[{"Sin", "[", "#", "]"}]}], ")"}], "/", "2"}], "&"}], 
+         "\[Rule]", " ", "\"\<Sine\>\""}], ",", "\n", 
+        StyleBox[
+         RowBox[{"\t\t\t\t\t\t\t\t\t\t\t", "\t"}]], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"RandomInteger", "[", "1", "]"}], "&"}], "\[Rule]", " ", 
+         "\"\<Random\>\""}], ",", "\n", 
+        StyleBox[
+         RowBox[{"\t\t\t\t\t\t\t\t\t\t\t", "\t"}]], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"UnitStep", "[", "#", "]"}], "&"}], " ", "\[Rule]", " ", 
+         "\"\<unit step\>\""}]}], " ", "}"}]}], "}"}]}], " ", "]"}],
+  FontFamily->"Courier New"]], "Code",
+ CellChangeTimes->{{3.6180105456064*^9, 3.6180105608272705`*^9}, {
+   3.618010636472597*^9, 3.6180107022283583`*^9}, {3.6180138050878315`*^9, 
+   3.6180138221478076`*^9}, {3.6180138562587585`*^9, 
+   3.6180138601589813`*^9}, {3.6180141025278444`*^9, 
+   3.6180141354177256`*^9}, {3.618014755499192*^9, 3.6180147650587387`*^9}, 
+   3.618014832647605*^9, 3.618016740558731*^9, {3.6180167708624644`*^9, 
+   3.6180168072605467`*^9}, {3.6180168556053114`*^9, 
+   3.6180168698691273`*^9}, {3.618017079305106*^9, 3.618017079915141*^9}, 
+   3.6180171987279367`*^9, {3.6180172411713643`*^9, 3.618017242631448*^9}, {
+   3.618017337443871*^9, 3.618017339049963*^9}, {3.618017398775379*^9, 
+   3.6180174026796026`*^9}, {3.61801743971072*^9, 3.618017495187894*^9}, {
+   3.618017542460597*^9, 3.6180175426026053`*^9}, {3.6180176053081923`*^9, 
+   3.6180177472913127`*^9}, {3.6180179041232834`*^9, 
+   3.6180179752593517`*^9}, {3.61801801019035*^9, 3.6180180264252787`*^9}, {
+   3.618018777460235*^9, 3.6180187842306223`*^9}, {3.6180547361015625`*^9, 
+   3.618054748354492*^9}, {3.618054810366211*^9, 3.6180548106376953`*^9}, {
+   3.618054850390625*^9, 3.618054854158203*^9}, {3.6180550084140625`*^9, 
+   3.6180550245859375`*^9}, {3.6180555430810547`*^9, 
+   3.6180555622841797`*^9}, {3.6180558285507812`*^9, 
+   3.6180558352421875`*^9}, {3.618058559671875*^9, 3.618058594161133*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 0.009, $CellContext`steps$$ = 
+    500, $CellContext`value$$ = If[# == 0, 1, 0]& , $CellContext`view$$ = 
+    ArrayPlot, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`steps$$], 500}, 10, 500, 1}, {{
+       Hold[$CellContext`k$$], 0.009, "k added to mean of neighborhood"}, 0, 
+      1, 0.0001}, {{
+       Hold[$CellContext`view$$], ArrayPlot}, {
+      ArrayPlot -> "cell gray level", ListContourPlot -> "contour", 
+       ListDensityPlot -> "density"}}, {{
+       Hold[$CellContext`value$$], UnitStep[#]& , 
+       "initial condition"}, {(If[# == 0, 1, 0]& ) -> 
+       "one cell", (0.1 + Sinc[#]/2& ) -> "Sinc", ((1 + Sin[#])/2& ) -> 
+       "Sine", (RandomInteger[1]& ) -> "Random", (UnitStep[#]& ) -> 
+       "unit step"}}}, Typeset`size$$ = {1400., {690., 710.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`steps$10557$$ = 0, $CellContext`k$10558$$ = 
+    0, $CellContext`view$10559$$ = False, $CellContext`value$10560$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`k$$ = 0.009, $CellContext`steps$$ = 
+        500, $CellContext`value$$ = UnitStep[#]& , $CellContext`view$$ = 
+        ArrayPlot}, "ControllerVariables" :> {
+        Hold[$CellContext`steps$$, $CellContext`steps$10557$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$10558$$, 0], 
+        Hold[$CellContext`view$$, $CellContext`view$10559$$, False], 
+        Hold[$CellContext`value$$, $CellContext`value$10560$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> $CellContext`view$$[
+        (If[$CellContext`view$$ === ArrayPlot, #, 
+         Reverse[#]]& )[
+         CellularAutomaton[{Mod[Mean[#] + $CellContext`k$$, 1]& , {}, 1}, 
+          N[
+           Table[
+            $CellContext`value$$[$CellContext`x], {$CellContext`x, -
+             Floor[$CellContext`steps$$/2], 
+             Floor[$CellContext`steps$$/2], 1}]], $CellContext`steps$$]], 
+        Frame -> None, ImageSize -> {700, 700}, ColorFunction -> "GrayTones"],
+       "Specifications" :> {{{$CellContext`steps$$, 500}, 10, 500, 
+         1}, {{$CellContext`k$$, 0.009, "k added to mean of neighborhood"}, 0,
+          1, 0.0001, Appearance -> 
+         "Labeled"}, {{$CellContext`view$$, ArrayPlot}, {
+         ArrayPlot -> "cell gray level", ListContourPlot -> "contour", 
+          ListDensityPlot -> "density"}}, {{$CellContext`value$$, 
+          UnitStep[#]& , "initial condition"}, {(If[# == 0, 1, 0]& ) -> 
+          "one cell", (0.1 + Sinc[#]/2& ) -> "Sinc", ((1 + Sin[#])/2& ) -> 
+          "Sine", (RandomInteger[1]& ) -> "Random", (UnitStep[#]& ) -> 
+          "unit step"}}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{1490., {884., 895.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.618059971323242*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Thing to try:", "Subsubsection"]], "Text",
+ CellChangeTimes->{{3.618056877879883*^9, 3.6180569581035156`*^9}}],
+
+Cell["\<\
+- Change the constant k added to s
+- Try using a random initial condition, or the listed functions. 
+\t. \
+\>", "Text",
+ CellChangeTimes->{{3.618056877879883*^9, 3.6180569775*^9}, {
+  3.618058158426758*^9, 3.618058193515625*^9}, {3.6180600835839844`*^9, 
+  3.6180600905507812`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6180565873154297`*^9, 3.6180565885322266`*^9}}],
+
+Cell[TextData[StyleBox["Tutorial by: Antonio Rueda Toicen\n\t       \
+antonio.rueda.toicen [ at ] gmail \[OpenCurlyDoubleQuote]dot\
+\[CloseCurlyDoubleQuote] com  ", "Subsection"]], "Text",
+ CellChangeTimes->{{3.618056597977539*^9, 3.6180566330585938`*^9}}],
+
+Cell[TextData[{
+ "Based on ",
+ ButtonBox["this demonstration by Daniel de Souza Carvalho",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/\
+ContinuousCellularAutomatonWithMathRulesII/"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/\
+ContinuousCellularAutomatonWithMathRulesII/"]
+}], "Text",
+ CellChangeTimes->{{3.618056721640625*^9, 3.618056728182617*^9}, {
+  3.6180567843554688`*^9, 3.6180568116083984`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1920, 1028},
+WindowMargins->{{Automatic, 1911}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (April 17, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 293, 6, 330, "Title"],
+Cell[876, 30, 16, 0, 60, "Text"],
+Cell[895, 32, 1202, 24, 136, "Text"],
+Cell[2100, 58, 2856, 63, 474, "Code"],
+Cell[4959, 123, 843, 15, 98, "Text"],
+Cell[CellGroupData[{
+Cell[5827, 142, 5504, 132, 474, "Code"],
+Cell[11334, 276, 3596, 65, 1836, "Output"]
+}, Open  ]],
+Cell[14945, 344, 134, 1, 80, "Text"],
+Cell[15082, 347, 292, 7, 136, "Text"],
+Cell[15377, 356, 96, 1, 60, "Input"],
+Cell[15476, 359, 256, 3, 144, "Text"],
+Cell[15735, 364, 463, 12, 60, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
