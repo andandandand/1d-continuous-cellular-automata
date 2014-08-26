@@ -2,7 +2,7 @@
 
 In a continuous cellular automaton, each cell has a gray level between [0,1] as its state. 
 
-In the cellular automaton shown, the transition function f computes the state of the cell *s*, at evolution step *t*+1, as the fractional part of the mean of its neighborhood's gray levels at evolution step *t* plus a constant *k*.
+In the cellular automaton shown, the transition function computes the state of the cell *s*, at evolution step *t*+1, as the fractional part of the mean of its neighborhood's gray levels at evolution step *t* plus a constant *k*.
 
 This rule is described on [page 159 of Wolfram's NKS](http://www.wolframscience.com/nksonline/page-159)
 
