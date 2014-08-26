@@ -1,4 +1,4 @@
-# Continuous 1D Cellular Automaton Tutorial #
+# Continuous 1D Cellular Automata Tutorial #
 
 In a continuous cellular automaton, each cell has a gray level between [0,1] as its state. 
 
