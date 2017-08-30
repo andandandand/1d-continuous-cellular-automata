@@ -9,7 +9,9 @@ This rule is described on [page 159 of Wolfram's NKS](http://www.wolframscience.
 See Mathematica notebook for more details and demo. 
 
 ![zerodot0081_500steps.png](https://bitbucket.org/repo/yoAnAE/images/2436032968-zerodot0081_500steps.png)
+
 *k = 0.009, t = 500, initial condition = "one cell"*
 
 ![zerodot0081_500steps_randomIC.png](https://bitbucket.org/repo/yoAnAE/images/2042167240-zerodot0081_500steps_randomIC.png)
+
 *k = 0.009, t = 500, initial condition = "random"*
